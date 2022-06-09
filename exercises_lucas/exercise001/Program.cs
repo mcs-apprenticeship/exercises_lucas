@@ -147,7 +147,9 @@ public class programm
             {
                 Console.Clear();
                 Console.WriteLine("");
+                Console.ForegroundColor= ConsoleColor.Green;
                 Console.WriteLine("Correct!");
+                Console.ForegroundColor = ConsoleColor.White;
                 rightanswers++;
                 Console.WriteLine("");
                 Thread.Sleep(3000);
@@ -157,7 +159,9 @@ public class programm
             {
                 Console.Clear();
                 Console.WriteLine("");
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("False!");
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("");
                 Thread.Sleep(3000);
                 Console.Clear();
