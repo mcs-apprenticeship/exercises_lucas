@@ -1,0 +1,15 @@
+D:\_git\_privat\exercises_lucas\exercises_lucas\exercise025\bin\Debug\net6.0\exercise025.exe
+D:\_git\_privat\exercises_lucas\exercises_lucas\exercise025\bin\Debug\net6.0\exercise025.deps.json
+D:\_git\_privat\exercises_lucas\exercises_lucas\exercise025\bin\Debug\net6.0\exercise025.runtimeconfig.json
+D:\_git\_privat\exercises_lucas\exercises_lucas\exercise025\bin\Debug\net6.0\exercise025.dll
+D:\_git\_privat\exercises_lucas\exercises_lucas\exercise025\bin\Debug\net6.0\ref\exercise025.dll
+D:\_git\_privat\exercises_lucas\exercises_lucas\exercise025\bin\Debug\net6.0\exercise025.pdb
+D:\_git\_privat\exercises_lucas\exercises_lucas\exercise025\obj\Debug\net6.0\exercise025.GeneratedMSBuildEditorConfig.editorconfig
+D:\_git\_privat\exercises_lucas\exercises_lucas\exercise025\obj\Debug\net6.0\exercise025.AssemblyInfoInputs.cache
+D:\_git\_privat\exercises_lucas\exercises_lucas\exercise025\obj\Debug\net6.0\exercise025.AssemblyInfo.cs
+D:\_git\_privat\exercises_lucas\exercises_lucas\exercise025\obj\Debug\net6.0\exercise025.csproj.CoreCompileInputs.cache
+D:\_git\_privat\exercises_lucas\exercises_lucas\exercise025\obj\Debug\net6.0\exercise025.dll
+D:\_git\_privat\exercises_lucas\exercises_lucas\exercise025\obj\Debug\net6.0\ref\exercise025.dll
+D:\_git\_privat\exercises_lucas\exercises_lucas\exercise025\obj\Debug\net6.0\exercise025.pdb
+D:\_git\_privat\exercises_lucas\exercises_lucas\exercise025\obj\Debug\net6.0\exercise025.genruntimeconfig.cache
+D:\_git\_privat\exercises_lucas\exercises_lucas\exercise025\obj\Debug\net6.0\exercise025.csproj.AssemblyReference.cache
