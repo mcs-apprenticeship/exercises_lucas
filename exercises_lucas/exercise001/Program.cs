@@ -52,15 +52,6 @@ public class programm
         },
         new Dictionary<string, string>
         {
-            {"question", "MM's or Maltesers?"},
-            {"1", "MM's"},
-            {"2", "Maltesers"},
-            {"3", "I like both"},
-            {"4", "7"},
-            {"rightAnswer", "2"}
-        },
-        new Dictionary<string, string>
-        {
             {"question", "Who is our almighty lord and savour?"},
             {"1", "Jesus Kistus"},
             {"2", "Satan"},
@@ -70,12 +61,66 @@ public class programm
         },
         new Dictionary<string, string>
         {
-            {"question", "M?"},
-            {"1", "MM's"},
-            {"2", "Maltesers"},
-            {"3", "I like both"},
-            {"4", "7"},
-            {"rightAnswer", "2"}
+            {"question", "Who is playing spiderman in the latest spiderman movies?"},
+            {"1", "Sam Ramy"},
+            {"2", "Peter Parker"},
+            {"3", "Tom Holland"},
+            {"4", "Zach snider"},
+            {"rightAnswer", "3"}
+        },
+        new Dictionary<string, string>
+        {
+            {"question", "What is Super Marios second name?"},
+            {"1", "Mussolini"},
+            {"2", "Lombardi"},
+            {"3", "Luigi"},
+            {"4", "Mario"},
+            {"rightAnswer", "4"}
+        },
+        new Dictionary<string, string>
+        {
+            {"question", "When did the first Star Wars movie come out?"},
+            {"1", "1977"},
+            {"2", "2004"},
+            {"3", "1990"},
+            {"4", "1973"},
+            {"rightAnswer", "1"}
+        },
+        new Dictionary<string, string>
+        {
+            {"question", "When did the first Star Wars movie come out?"},
+            {"1", "1977"},
+            {"2", "2004"},
+            {"3", "1990"},
+            {"4", "1973"},
+            {"rightAnswer", "1"}
+        },
+        new Dictionary<string, string>
+        {
+            {"question", "?"},
+            {"1", "1977"},
+            {"2", "2004"},
+            {"3", "1990"},
+            {"4", "1973"},
+            {"rightAnswer", "1"}
+        },
+        new Dictionary<string, string>
+        {
+            {"question", "Who played Batman in 1989"},
+            {"1", "Christian Bale" },
+            {"2", "Ben Affleck" },
+            {"3", "Robert Pattinson"},
+            {"4", "Michael Keaton" },
+            {"rightAnswer", "4" },
+        },
+        new Dictionary<string, string>
+        {
+            {"question", "Pi"},
+            {"1", "3.1415926" },
+            {"2", "3.1428571" },
+            {"3", "3.1414213"},
+            {"4", "69" },
+            {"rightAnswer", "1" },
         },
     };
     public static void Main()
@@ -119,7 +164,7 @@ public class programm
             }
         }
         Console.WriteLine("============================");
-        Console.WriteLine($"You got {rightanswers} out of {amount} right.");
+        Console.WriteLine($"You got {rightanswers} out of {amount} questions right.");
         Console.WriteLine("============================");
     }
 
@@ -134,7 +179,7 @@ public class programm
             int index;
             do
             {
-                index = random.Next(7);
+                index = random.Next(10);
             }while (chosenNumbers.Contains(index));
 
             selectedQuestions[i] = questions[index];
