@@ -10,7 +10,22 @@
       "ProjectGuid": "d4621546-3570-453b-a539-dea537c2d08b",
       "DisplayName": "exercise021",
       "ColorIndex": 1
+    },
+    "7dbc6a82-afd9-47ce-9465-515fa4d220d6": {
+      "ProjectGuid": "7dbc6a82-afd9-47ce-9465-515fa4d220d6",
+      "DisplayName": "exercise023",
+      "ColorIndex": 2
+    },
+    "3738982a-0aa9-4afd-b96d-2fe891e57593": {
+      "ProjectGuid": "3738982a-0aa9-4afd-b96d-2fe891e57593",
+      "DisplayName": "exercise024",
+      "ColorIndex": 3
+    },
+    "100ebb97-be6a-4b5f-ba70-d4053e49ecd6": {
+      "ProjectGuid": "100ebb97-be6a-4b5f-ba70-d4053e49ecd6",
+      "DisplayName": "exercise025",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 5
 }

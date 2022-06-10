@@ -7,8 +7,7 @@ public class program
 
         if (int.TryParse(input, out int dayNumber))
         {
-            string day = weekDay(dayNumber);
-            Console.WriteLine(day);
+            Console.WriteLine(weekDay(dayNumber));
         }
         else
         {
