@@ -5,7 +5,7 @@ public class Program
         Console.WriteLine("Please enter a value:");
 
         int value = int.Parse(Console.ReadLine());
-        Console.WriteLine("{0}", string.Join(", ", returnFibonacciRecursive(value)));
+        Console.WriteLine("{0}", string.Join(", ", returnFibonacciLoop(value)));
     }
 
     public static List<int> returnFibonacciLoop(int value)
@@ -15,6 +15,7 @@ public class Program
         fibonacci.Add(0);
         fibonacci.Add(1);
         int index = 2;
+
 
         while (fibonacci[index-2] + fibonacci[index-1] < value)
         {
