@@ -9,25 +9,100 @@ namespace ContactManager
 {
     internal class MainWindowViewModel : ViewModel
     {
-        public List<Contact> Contacts = new
+        private List<Contact> contacts = new()
         {
-            new(){ Id = 12, AvatarPath = "kljhdflkshd", Name = "John", LastName = "Doe", Gender = Gender.m, Married = false, Weight = 100.2 };
-        }
-        Contact contact1 = new(12, "kljhdflkshd", "John", "Doe", Gender.m, false, 100.2);
+            new(1,"kljhdflkshd","John", "Doe", Gender.m, true, 100.2 ),
+            new(2,"kljhdflkshd","John1", "Doe", Gender.m, false, 100.2 ),
+            new(3,"kljhdflkshd","John2", "Doe", Gender.m, true, 100.2 ),
+        };
 
-
-
-        public List<string> Name
+        public List<Contact> Contacts
         {
-            get => contact1.Name;
+            get => contacts;
             set
             {
-                if (contact1.Name != value)
+                if (contacts != value)
                 {
-                    contact1.Name = value;
+                    Contacts = value;
                     NotifyPropertyChanged();
                 }
             }
         }
+
+        public int selectedContact = 1;
+        public int SelectedContact 
+        { 
+            get => selectedContact;
+            set
+            {
+                if(selectedContact != value)
+                {
+                    selectedContact = value;
+                    NotifyPropertyChanged();
+                    NotifyPropertyChanged(nameof(Contact));
+
+                }
+            }
+        }
+
+        public bool isMale = false;
+        public bool IsMale 
+        {
+            get => isMale;
+            set
+            {
+                if (isMale != value)
+                {
+                    isMale = value;
+                    NotifyPropertyChanged();
+                    Contact.Gender = Gender.m;
+                }
+            }
+        }
+
+        public bool isFemale = false;
+        public bool IsFemale
+        {
+            get => isFemale;
+            set
+            {
+                if (isFemale != value)
+                {
+                    isFemale = value;
+                    Contact.Gender = Gender.f;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        public bool isOther = true;
+        public bool IsOther
+        {
+            get => isOther;
+            set
+            {
+                if (isOther != value)
+                {
+                    isOther = value;
+                    Contact.Gender = Gender.x;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        public Contact Contact 
+        { 
+            get => contacts[SelectedContact];
+            set
+            {
+                if (contacts[SelectedContact] != value)
+                {
+                    NotifyPropertyChanged();
+                    contacts[SelectedContact] = value;
+                }
+            } 
+        }
+
+
     }
 }

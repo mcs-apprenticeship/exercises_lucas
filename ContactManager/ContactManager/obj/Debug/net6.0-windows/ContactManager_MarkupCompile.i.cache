@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\_git\_privat\exercises_lucas\ContactManager\ContactManager\obj\Debug\net6.0-windows\
+C:\git\exercises_lucas\ContactManager\ContactManager\obj\Debug\net6.0-windows\
 ContactManager
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\_git\_privat\exercises_lucas\ContactManager\ContactManager\App.xaml
+C:\git\exercises_lucas\ContactManager\ContactManager\App.xaml
 21308839088
 
 10361062043
 194-97651837
 Views\ContactNames.xaml;Views\MainWindow.xaml;
 
-True
+False
 

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace ContactManager.Views
 {
     /// <summary>
@@ -26,9 +27,21 @@ namespace ContactManager.Views
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Contact_Click(object sender, RoutedEventArgs e)
         {
+            var selectedIndex = ContactsList.SelectedIndex;
+            if (selectedIndex != -1)
+            {
+                ((MainWindowViewModel)DataContext).SelectedContact = selectedIndex;
+            }
 
+            //((MainWindowViewModel)DataContext).SelectedContact = 
+        }
+
+        private void ReloadList(object sender, RoutedEventArgs e)
+        {
+            ContactsList.ItemsSource = null;
+            ContactsList.ItemsSource = ((MainWindowViewModel)DataContext).Contacts;
         }
     }
 }

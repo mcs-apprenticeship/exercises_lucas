@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactManager.Views"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         Title="MainWindow" Height="450" Width="800">
   <Window.Resources>
     <!-- Create a dictionary with some static values that can be referenced by their corresponding keys -->
@@ -15,41 +16,93 @@
       <SolidColorBrush x:Key="SecondElementBrush" Color="Teal"></SolidColorBrush>
       <SolidColorBrush x:Key="ButtonBrush" Color="#ECB365"></SolidColorBrush>
       <SolidColorBrush x:Key="BorderBrush" Color="#064663"></SolidColorBrush>
+      <SolidColorBrush x:Key="TextColorbrush" Color="#FFFF"></SolidColorBrush>
 
       <Style x:Key="BackgroundStyle" TargetType="Grid">
         <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
       </Style>
 
-      <Style x:Key="FirstElementStyle" TargetType="StackPanel">
+      <Style x:Key="FirstElementStyle" TargetType="ListView">
         <Setter Property="Background" Value="{StaticResource FirstElementBrush}"/>
       </Style>
 
-      <Style x:Key="ButtonStyle" TargetType="Button">
-        <Setter Property="Background" Value="{StaticResource ButtonBrush}"/>
-        <Setter Property="Width" Value="80"/>
-      </Style>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="Background" Value="{StaticResource ButtonBrush}"/>
+                <Setter Property="Width" Value="80"/>
+            </Style>
 
-      <Style x:Key="BorderStyle" TargetType="Border">
-        <Setter Property="Background" Value="{StaticResource BorderBrush}"/>
-      </Style>
+            <Style x:Key="BorderStyle" TargetType="Border">
+                <Setter Property="Background" Value="{StaticResource BorderBrush}"/>
+        
+            </Style>
+
+            <Style x:Key="PrimaryTextStyle" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{StaticResource TextColorbrush}"/>
+                <Setter Property="FontSize" Value="12"/>
+            </Style>
+
+            <Style x:Key="RadioButtonStyle" TargetType="RadioButton">
+                <Setter Property="Foreground" Value="{StaticResource TextColorbrush}"/>
+                <Setter Property="FontSize" Value="12"/>
+            </Style>
     </ResourceDictionary>
   </Window.Resources>
 
-  <Grid Style="{StaticResource BackgroundStyle}">
+    <Grid Style="{StaticResource BackgroundStyle}">
+        <ListView x:Name="ContactsList"  ItemsSource="{Binding Contacts}" Style="{StaticResource FirstElementStyle}" Margin="20, 20, 20, 60" Grid.Column="0" Grid.Row="0" Width="200" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden" MouseLeftButtonUp="Contact_Click">
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <TextBlock Text="{Binding Path=FullName, Mode=OneWay}" Width="200" Height="25"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
 
-    <StackPanel Style="{StaticResource FirstElementStyle}" Margin="21, 20, 20, 60" Grid.Column="0" Grid.Row="0" Width="200" HorizontalAlignment="Left">
-      <Button Content="{Binding Path=Name, Mode=OneWay}" />
-    </StackPanel>
-    <Grid Margin="20,0,0,20" Grid.Column="0" Width="200" Height="28" VerticalAlignment="Bottom" HorizontalAlignment="Left">
-      <Button Style="{StaticResource ButtonStyle}"  HorizontalAlignment="Left" Content="New"/>
-      <Button Style="{StaticResource ButtonStyle}"  HorizontalAlignment="Right" Content="Remove"/>
+            <!--<ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <EventSetter Event="MouseLeftButtonUp" Handler="Contact_Click" />
+                </Style>
+            </ListView.ItemContainerStyle>-->
+
+        </ListView>
+        <Grid Margin="20,0,20,20" Grid.Column="0" Width="200" Height="28" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <Button Style="{StaticResource ButtonStyle}"  HorizontalAlignment="Left" Content="New"/>
+            <Button Style="{StaticResource ButtonStyle}"  HorizontalAlignment="Right" Content="Remove"/>
+        </Grid>
+        <Grid Width="560" Margin="20,20,0,60" HorizontalAlignment="Right" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110"/>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="135"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Avatar:" Style="{StaticResource PrimaryTextStyle}" ></TextBlock>
+            
+            <TextBlock Grid.Row="1" Text="Gender:" Style="{StaticResource PrimaryTextStyle}" VerticalAlignment="Center"></TextBlock>
+            <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Orientation="Horizontal" >
+                <RadioButton IsChecked="{Binding IsMale}"  GroupName="Gender" Margin="0, 10,0,10" Content="Male" Style="{StaticResource RadioButtonStyle}"/>
+                <RadioButton IsChecked="{Binding IsFemale}" GroupName="Gender" Margin="10" Content="Female" Style="{StaticResource RadioButtonStyle}"/>
+                <RadioButton IsChecked="{Binding IsOther}" GroupName="Gender" Margin="10" Content="Other" Style="{StaticResource RadioButtonStyle}"/>
+            </StackPanel>
+            
+            <TextBlock Grid.Row="2" Text="FirstName:" Style="{StaticResource PrimaryTextStyle}" VerticalAlignment="Center"></TextBlock>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Contact.Name, Mode=TwoWay}" LostFocus="ReloadList" ></TextBox>
+            
+            <TextBlock Grid.Row="3" Text="LastName:" Style="{StaticResource PrimaryTextStyle}" VerticalAlignment="Center"></TextBlock>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Contact.LastName, Mode=TwoWay}"></TextBox>
+            
+            <TextBlock Grid.Row="4" Text="Married:" Style="{StaticResource PrimaryTextStyle}" VerticalAlignment="Center"></TextBlock>
+            <CheckBox IsChecked="{Binding Contact.Married, Mode=TwoWay}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"></CheckBox>
+            
+            <TextBlock Grid.Row="5" Text="Weight:" Style="{StaticResource PrimaryTextStyle}" VerticalAlignment="Center"></TextBlock>
+            <Slider Grid.Row="5" Grid.Column="1" Minimum="50" Maximum="200" VerticalAlignment="Center" Value="100"/>
+        </Grid>
+        
     </Grid>
-
-    <StackPanel Grid.Row="1" Width="Auto">
-
-
-    </StackPanel>
-
-
-  </Grid>
 </Window>

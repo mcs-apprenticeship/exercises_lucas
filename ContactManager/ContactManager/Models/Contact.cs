@@ -23,6 +23,11 @@ namespace ContactManager.Models
         public bool Married { get; set; }
         public double Weight { get; set; }
 
+        public string FullName
+        {
+            get => $"{Name} {LastName}";
+        } 
+
         public Contact(int id, string avatarPath, string name, string lastName, Gender gender, bool married, double weight)
         {
             Id = id;
@@ -33,5 +38,6 @@ namespace ContactManager.Models
             Married = married;
             Weight = weight;
         }
+
     }
 }
