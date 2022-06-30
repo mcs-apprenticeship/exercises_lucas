@@ -1,0 +1,28 @@
+<Window x:Class="Example_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Example_WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+  
+        xmlns:dev="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="dev"
+        dev:DataContext="{dev:DesignInstance local:MainWindowViewModel, IsDesignTimeCreatable=True}">
+
+  <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Center">
+    <!--Button x:Name="CounterButton" Click="CounterButton_Click">+ 1</Button>
+    <TextBlock x:Name="Counter" Padding="4">0</TextBlock>
+
+    <Button x:Name="CounterButton2" Command="{Binding IncrementCommand}"  Click="CounterButton_Click">+ 1</Button>
+    <TextBlock x:Name="Counter2" Text="{Binding Counter}" Padding="4"></TextBlock>-->
+    <TextBox x:Name="textBox" Text="{Binding Path = Text}"/>
+    <!--Button x:Name="CounterButton" Click="CounterButton_Click">+ 1</Button>
+    <TextBlock x:Name="Counter" Padding="4">0</TextBlock>
+
+    <Button x:Name="CounterButton2" Command="{Binding IncrementCommand}"  Click="CounterButton_Click">+ 1</Button>
+    <TextBlock x:Name="Counter2" Text="{Binding Counter}" Padding="4"></TextBlock>-->
+
+  </StackPanel>
+</Window>

@@ -40,7 +40,32 @@
       "ProjectGuid": "b1d67bc7-4a8a-4acd-b543-db05b061b26f",
       "DisplayName": "execise032",
       "ColorIndex": 7
+    },
+    "91a733f1-e9af-451b-bbbe-63f24f16c483": {
+      "ProjectGuid": "91a733f1-e9af-451b-bbbe-63f24f16c483",
+      "DisplayName": "exercise035",
+      "ColorIndex": 8
+    },
+    "30d69f18-56e0-480b-91c9-468304e2b5d4": {
+      "ProjectGuid": "30d69f18-56e0-480b-91c9-468304e2b5d4",
+      "DisplayName": "exercise034",
+      "ColorIndex": 9
+    },
+    "4be7c3b8-8bc5-4fbe-8afc-ac578737c942": {
+      "ProjectGuid": "4be7c3b8-8bc5-4fbe-8afc-ac578737c942",
+      "DisplayName": "execise033",
+      "ColorIndex": 10
+    },
+    "0f73b7db-f948-4f89-9d2c-6ad8b5a2b115": {
+      "ProjectGuid": "0f73b7db-f948-4f89-9d2c-6ad8b5a2b115",
+      "DisplayName": "execiseWPF",
+      "ColorIndex": 11
+    },
+    "2d7a4be7-cc15-4b44-a585-5cf217d48d5e": {
+      "ProjectGuid": "2d7a4be7-cc15-4b44-a585-5cf217d48d5e",
+      "DisplayName": "Example_WPF",
+      "ColorIndex": 12
     }
   },
-  "NextColorIndex": 8
+  "NextColorIndex": 13
 }
